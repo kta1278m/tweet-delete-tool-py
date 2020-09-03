@@ -28,13 +28,13 @@ pprint.pprint(user)
 def getTweet(max_id):
   statuses = api.GetUserTimeline(screen_name=user.screen_name, max_id=max_id)
   # for...in文でループする
-  oldTweet = None
+  oldestTweet = None
   for status in statuses:
     pprint.pprint(status.text)
     pprint.pprint(status.id)
     api.DestroyStatus(status.id)
-    oldTweet = status
-  if oldTweet is not None and len(statuses) != 1:
-    getTweet(oldTweet.id)
+    oldestTweet = status
+  if oldestTweet is not None and len(statuses) != 1:
+    getTweet(oldestTweet.id)
 
 getTweet(None)
