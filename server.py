@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 
 consumer_key = os.environ.get("API_KEY")
-consumer_secret = os.environ.get("API_SECRET")"
+consumer_secret = os.environ.get("API_SECRET")
 
 
 base_url = 'https://api.twitter.com/'
@@ -105,7 +105,7 @@ def get_twitter_user_timeline():
     return jsonify(results)
 
 if __name__ == "__main__":
-    port = os.environ.get('PORT', 3333)
+    port = os.environ.get('PORT', 5000)
     app.run(
         host='0.0.0.0',
         port=port,
